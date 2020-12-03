@@ -1,39 +1,17 @@
 import type { AWS } from '@serverless/typescript'
+import { provider } from './config/provider'
+import { custom } from './config/custom'
+import { functions } from './config/functions'
+import { resources } from './config/resources'
 
 const serverlessConfiguration: AWS = {
   service: 'sandbox-serverless-appsync',
   frameworkVersion: '2',
-  custom: {
-    webpack: {
-      webpackConfig: './webpack.config.js',
-      includeModules: true,
-    },
-  },
-  // Add the serverless-webpack plugin
   plugins: ['serverless-webpack'],
-  provider: {
-    name: 'aws',
-    runtime: 'nodejs12.x',
-    apiGateway: {
-      minimumCompressionSize: 1024,
-    },
-    environment: {
-      AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-    },
-  },
-  functions: {
-    hello: {
-      handler: 'handler.hello',
-      events: [
-        {
-          http: {
-            method: 'get',
-            path: 'hello',
-          },
-        },
-      ],
-    },
-  },
+  custom,
+  provider,
+  functions,
+  resources,
 }
 
 module.exports = serverlessConfiguration
