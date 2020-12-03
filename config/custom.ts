@@ -7,7 +7,7 @@ export const custom: AWS['custom'] = {
   },
   tags: {
     service: '${self:service}',
-    stage: '${opt:stage, self:provider.stage}',
+    stage: '${self:provider.stage}',
   },
   dynamodb: {
     stages: ['dev', 'stg', 'prod'],
