@@ -9,6 +9,7 @@
     "format": "prettier \"./**/*.{ts,js,json,yml}\" --write"
   },
   "dependencies": {
+    "serverless-appsync-plugin": "^1.4.0",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {

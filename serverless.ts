@@ -7,7 +7,7 @@ import { resources } from './config/resources'
 const serverlessConfiguration: AWS = {
   service: 'sandbox-serverless-appsync',
   frameworkVersion: '2',
-  plugins: ['serverless-webpack'],
+  plugins: ['serverless-webpack', 'serverless-appsync-plugin'],
   custom,
   provider,
   functions,

@@ -1,4 +1,5 @@
 import { AWS } from '@serverless/typescript'
+import { appSync } from './custom/appsync'
 
 export const custom: AWS['custom'] = {
   webpack: {
@@ -16,4 +17,5 @@ export const custom: AWS['custom'] = {
       inMemory: true,
     },
   },
+  appSync,
 }
